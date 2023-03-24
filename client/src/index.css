@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;700&display=swap");
+/* font-family: 'Edu NSW ACT Foundation', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  background-color: #13131a;
+  color: white;
+  font-family: "Epilogue", "sans-serif";
+}
+
+/* General */
+.img-icon {
+  display: block;
+  width: 24px;
+  object-fit: contain;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #1c1c24;
+  border-radius: 25px;
+}
+
+.form-heading {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1dc071;
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.submit-button {
+  border: none;
+  border-radius: 10px;
+  letter-spacing: 0.05em;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 8px 20px;
+  background-color: #1dc071;
+}
+
+.submit-button > * {
+  word-wrap: break-word;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  filter: invert(2);
+}
+
+.error {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: red;
+}
+
+.success-container {
+  z-index: -1;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1dc071;
+}
+
+/* Loader */
+.loader-container {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Navbar */
+.navbar-container {
+  padding: 20px 0;
+}
+
+.navbar {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin: 0 20px;
+  font-size: 16px;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+}
+
+.nav__toggler {
+  display: none;
+  position: relative;
+}
+
+.nav__toggler div {
+  width: 40px;
+  height: 3px;
+  background-color: #fff;
+  transition: transform 0.2s ease-out;
+}
+
+.line2 {
+  margin: 8px 0;
+}
+
+@media screen and (max-width: 824px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__menu {
+    position: fixed;
+    top: 76px;
+    right: 5vw;
+    height: calc(100vh - 2 * 76px);
+    width: 90vw;
+    background-color: rgb(34, 34, 47);
+    flex-direction: column;
+    transform: translateY(-120%);
+    transition: 0.5s ease-in;
+    z-index: 100;
+  }
+  .nav__active .nav-button {
+    font-size: 24px;
+  }
+}
+.nav__active {
+  transform: translateY(0%);
+}
+
+/* Homepage */
+.homepage {
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage > h2 {
+  text-align: center;
+  font-size: 72px;
+  margin: 20px 0;
+}
+
+.homepage-address {
+  border-radius: 5px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Create Credential */
+.create-credential-form {
+  padding: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.create-credentials-form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-column-gap: 40px;
+}
+
+/* View All Credential */
+.profile-grid {
+  max-width: 90vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 25px;
+  grid-column-gap: 50px;
+}
+
+.profile-title {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 100%;
+  }
+}
+
+/* Credential Card */
+.credential-card {
+  max-width: 90vw;
+  margin-bottom: 40px;
+  padding: 30px;
+  max-height: 100%;
+  border: solid;
+  border-color: black;
+  background-color: rgb(58, 59, 59);
+}
+
+.credential-card-title {
+  color: rgb(204, 204, 0);
+  font-size: 20px;
+}
+
+.credential-card-description {
+  text-align: justify;
+  margin: 30px 0;
+}
+
+.credential-card-view-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* View Credentials Detail */
+.credential-detail {
+}
+
+.credential-detail-title {
+  margin: 10px 0;
+}
+.credential-detail-info {
+  margin: 40px 0;
+}
+
+.credential-detail-info-section {
+  margin-bottom: 40px;
+}
+
+.credential-detail-info-section > div,
+.credential-detail-info-section > p,
+.credential-detail-info-section > div > p {
+  text-align: justify;
+  padding: 10px 0;
+}
+
+.credential-detail-info-creator-title {
+}
+
+.credential-detail-info-creator-group {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.credential-detail-info-creator-group > img {
+  margin-right: 10px;
+  width: 30px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.credential-detail-info-creator-group > div > p:nth-child(1) {
+  font-size: 20px;
+}
+
+.credential-detail-info-creator-group > div > p:nth-child(2) {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.date-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.credential-detail-info-access-token > h1 {
+  color: #3e98b1;
+  margin-bottom: 20px;
+}
+
+.credential-detail-info-access-token > p {
+  margin-bottom: 10px;
+  color: #3e98b1;
+}
+
+.credential-detail-info-access-token-title {
+  color: #3e98b1;
+  margin-bottom: 20px;
+}
+
+.credential-detail-info-access-token-data {
+  color: rgb(132, 193, 247);
+}
+
+/* Credential Details Card */
+.credential-detail-card {
+  max-width: 600px;
+  position: relative;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-size: 1.5em;
+  padding: 20px;
+  text-align: center;
+  border-style: double;
+  border-width: 10px;
+  margin: 20px auto;
+}
+
+.credential-detail-card-logo {
+  padding-bottom: 20px;
+}
+
+.credential-detail-card-approved-img {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  rotate: 10deg;
+}
+
+.credential-detail-card > p {
+  margin-bottom: 40px;
+}
+
+.credential-detail-card-footer {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+/* Verification Page */
+.verify-verified-text {
+  text-align: center;
+  color: #3e98b1;
+}
+
+.verify-verified-container {
+  margin: 40px 0;
+}
+
+/* Custom Form Field */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-field-label {
+  color: #1dc071;
+  margin-bottom: 10px;
+}
+
+.form-field-textarea {
+  color: white;
+  border-color: #3a3a43;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  padding: 15px;
+}
+
+.form-field-input {
+  color: white;
+  padding: 15px;
+  outline: none;
+  border: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  background: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .create-credentials-form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 40px;
+  }
+}
